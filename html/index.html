@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash Can</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="trash-container" class="hidden">
+        <!-- Main Window -->
+        <div class="trash-window">
+            <!-- Decorative Corners -->
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+
+            <!-- Header -->
+            <div class="trash-header">
+                <div class="header-icon">
+                    <i class="fas fa-trash-alt"></i>
+                </div>
+                <div class="header-content">
+                    <h1 class="trash-title">TRASH CAN</h1>
+                    <p class="trash-subtitle">Dispose of unwanted items</p>
+                </div>
+                <button class="close-btn" id="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Divider -->
+            <div class="ornate-divider">
+                <span class="divider-line"></span>
+                <i class="fas fa-recycle divider-icon"></i>
+                <span class="divider-line"></span>
+            </div>
+
+            <!-- Items Container -->
+            <div class="items-section">
+                <div class="items-header">
+                    <i class="fas fa-box-open"></i>
+                    <span>Your Inventory</span>
+                    <span class="item-count" id="item-count">0 items</span>
+                </div>
+                <div class="items-list" id="items-list">
+                    <!-- Items will be populated here -->
+                </div>
+                <div class="empty-state hidden" id="empty-state">
+                    <i class="fas fa-box-open"></i>
+                    <p>Your inventory is empty</p>
+                    <span>Nothing to throw away</span>
+                </div>
+            </div>
+
+            <!-- Quantity Modal -->
+            <div class="quantity-modal hidden" id="quantity-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <i class="fas fa-trash"></i>
+                        <h3>Dispose Item</h3>
+                    </div>
+                    <div class="selected-item" id="selected-item-display">
+                        <img src="" alt="" id="selected-item-img">
+                        <div class="selected-item-info">
+                            <span class="selected-item-name" id="selected-item-name">Item Name</span>
+                            <span class="selected-item-available">Available: <span id="selected-item-amount">0</span></span>
+                        </div>
+                    </div>
+                    <div class="quantity-input-group">
+                        <label>Amount to dispose:</label>
+                        <div class="quantity-controls">
+                            <button class="qty-btn" id="qty-decrease">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number" id="quantity-input" value="1" min="1">
+                            <button class="qty-btn" id="qty-increase">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="quick-qty-buttons">
+                            <button class="quick-qty" data-qty="1">1</button>
+                            <button class="quick-qty" data-qty="5">5</button>
+                            <button class="quick-qty" data-qty="10">10</button>
+                            <button class="quick-qty" data-qty="all">ALL</button>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="modal-btn cancel-btn" id="cancel-dispose">
+                            <i class="fas fa-arrow-left"></i>
+                            Cancel
+                        </button>
+                        <button class="modal-btn confirm-btn" id="confirm-dispose">
+                            <i class="fas fa-trash-alt"></i>
+                            Dispose
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="trash-footer">
+                <div class="footer-warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Items disposed cannot be recovered</span>
+                </div>
+                <div class="footer-hint">
+                    <span class="key">ESC</span>
+                    <span>to close</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
